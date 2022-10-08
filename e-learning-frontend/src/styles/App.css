@@ -1,0 +1,95 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Utilities */
+
+.round-edges {
+    border-radius: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 0 2vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.hide {
+    display: none;
+}
+
+.radio {
+    height: 15px;
+    width: 15px;
+    margin: 1vh;
+}
+
+.dark-bg {
+    background-color: rgb(126, 162, 255);
+}
+
+.light-bg {
+    background-color: rgb(232, 238, 255);
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.dark-txt {
+    color: rgb(99, 115, 155);
+}
+
+.light-txt {
+    color: rgb(155, 155, 155);
+}
+
+.white-txt {
+    color: white;
+}
+
+.black-text {
+    color: black;
+}
+
+.page-container {
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-content {
+    width: 100%;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.subtitle {
+    font-size: 30px;
+}
