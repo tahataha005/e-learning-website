@@ -60,6 +60,10 @@
     background-color: white;
 }
 
+.gradient-bg {
+    background: linear-gradient(rgba(0, 189, 237), rgb(19, 94, 222));
+}
+
 .dark-txt {
     color: rgb(99, 115, 155);
 }
@@ -78,6 +82,7 @@
 
 .page-container {
     width: 100vw;
+    height: 100vh;
     align-items: center;
     justify-content: center;
 }
