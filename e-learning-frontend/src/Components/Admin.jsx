@@ -6,6 +6,8 @@ import AdminButton from "./AdminButton";
 import Table from "./Table";
 
 const Admin = () => {
+    const [popup, setPopup] = useState(false);
+
     const buttons = [
         { id: 1, name: "Courses" },
         { id: 2, name: "Instructors" },
@@ -36,6 +38,9 @@ const Admin = () => {
                             <AdminButton
                                 text={"Add"}
                                 className={"interaction-btn"}
+                                onClick={() => {
+                                    setPopup(!popup);
+                                }}
                             />
                             <AdminButton
                                 text={"Delete"}
@@ -58,6 +63,31 @@ const Admin = () => {
                         </div>
                     </div>
                 </div>
+                {popup && (
+                    <div className="add-popup flex">
+                        <div className="pop-content flex column white-bg round-edges">
+                            <div className="X-container flex">
+                                <AdminButton
+                                    className={"X-button"}
+                                    text={"X"}
+                                    onClick={() => {
+                                        setPopup(false);
+                                    }}
+                                />
+                            </div>
+                            <div className="add-inputs flex column">
+                                <p className="title">Add</p>
+                                <AdminButton
+                                    className={"admin-btn"}
+                                    text={"Add"}
+                                    onClick={() => {
+                                        setPopup(false);
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </>
     );
