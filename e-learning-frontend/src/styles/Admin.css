@@ -52,3 +52,26 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.records {
+    width: 100%;
+    height: 70%;
+    padding: 3vh;
+}
+
+.table-headers {
+    width: 100%;
+    height: 15vh;
+    padding: 0 5vh;
+}
+
+.table-headers > table > tr > td {
+    font-size: 25px;
+}
+
+.table-data-container {
+    width: 100%;
+    height: 70vh;
+    margin: 2vh 0;
+    padding: 2vh 5vh;
+}
