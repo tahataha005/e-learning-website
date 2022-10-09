@@ -43,6 +43,20 @@ const Admin = () => {
                             />
                         </div>
                     </div>
+                    <div className="records flex column round-edges white-bg">
+                        <div className="table-headers flex dark-bg round-edges white-txt">
+                            <table>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>CRN</td>
+                                    <td>Name</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div className="table-data-container light-bg round-edges dark-txt">
+                            <Table data={fake_data} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
