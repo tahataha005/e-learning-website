@@ -9,3 +9,31 @@
     align-items: center;
     justify-content: flex-start;
 }
+
+.announcements-container {
+    width: 100%;
+    height: 75%;
+    margin-top: 2vh;
+}
+
+.announcements-landing {
+    width: 30%;
+    height: 100%;
+    border-right: 1px rgb(99, 115, 155) solid;
+}
+
+.announcements-title {
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    padding: 2vh;
+    justify-content: center;
+    border-bottom: 1px rgb(99, 115, 155) solid;
+}
+
+.announcements-wrapper {
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: flex-start;
+}
