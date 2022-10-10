@@ -1,7 +1,14 @@
 import React from "react";
 import AdminButton from "./AdminButton";
 
-const SideBar = ({ buttons, btn_class, userstamp, side_class }) => {
+const SideBar = ({
+    buttons,
+    btn_class,
+    userstamp,
+    side_class,
+    setCurrent,
+    current,
+}) => {
     const side_bar_classes = `side-bar flex column round-edges ${side_class}`;
     return (
         <div className={side_bar_classes}>
@@ -16,6 +23,11 @@ const SideBar = ({ buttons, btn_class, userstamp, side_class }) => {
                             key={btn.id}
                             text={btn.name}
                             className={btn_class}
+                            onClick={() => {
+                                setCurrent(btn.name);
+                                localStorage.setItem("current", current);
+                                console.log(current);
+                            }}
                         />
                     );
                 })}
