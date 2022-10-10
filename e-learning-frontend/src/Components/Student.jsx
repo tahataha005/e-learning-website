@@ -25,12 +25,12 @@ const Student = () => {
             />
             <div className="page-content student-content flex column">
                 <Header />
-                <div className="student-content">
-                    <div className="announcements-container">
-                        <div className="announcements-title">
+                <div className="announcements-container flex row light-bg round-edges">
+                    <div className="announcements-landing">
+                        <div className="announcements-title flex">
                             <p className="subtitle dark-txt">Announcements</p>
                         </div>
-                        <div className="announcements-wrapper"></div>
+                        <div className="announcements-wrapper flex column"></div>
                     </div>
                 </div>
             </div>
