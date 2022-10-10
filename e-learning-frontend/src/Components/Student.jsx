@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Student.css";
+import Header from "./Header";
 import SideBar from "./SideBar";
 
 const Student = () => {
@@ -22,6 +23,9 @@ const Student = () => {
                 userstamp={userstamp}
                 side_class={"light-bg"}
             />
+            <div className="page-content student-content flex column">
+                <Header />
+            </div>
         </div>
     );
 };
