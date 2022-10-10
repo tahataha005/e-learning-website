@@ -25,6 +25,14 @@ const Student = () => {
             />
             <div className="page-content student-content flex column">
                 <Header />
+                <div className="student-content">
+                    <div className="announcements-container">
+                        <div className="announcements-title">
+                            <p className="subtitle dark-txt">Announcements</p>
+                        </div>
+                        <div className="announcements-wrapper"></div>
+                    </div>
+                </div>
             </div>
         </div>
     );
