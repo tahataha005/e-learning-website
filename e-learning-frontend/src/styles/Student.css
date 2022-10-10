@@ -36,4 +36,30 @@
     height: 90%;
     align-items: center;
     justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.announcements-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.annoucement-block {
+    width: 100%;
+    height: 20%;
+    border-top: 1px rgb(99, 115, 155) solid;
+    padding: 2vh;
+}
+
+.annoucement-title {
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-outerview {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
