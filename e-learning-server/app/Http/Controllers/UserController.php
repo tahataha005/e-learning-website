@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Course;
-
+use App\Models\Announcement;
 
 class UserController extends Controller
 {
@@ -18,7 +18,17 @@ class UserController extends Controller
 
     function getCourse($course_id){
         $course=Course::find($course_id);
+        $instructor=User::select("username")->where("id",$course->instructor_id)->get();
 
-        return response()->json(["user"=>$course]);
+        $announcements=Announcement::
+        where('course_id',$course_id)
+        ->get();
+
+        return response()->json([
+            "course"=>$course,
+            "instructor"=>$instructor,
+            "announcements"=>$announcements
+        ]);
     }
+    
 }
