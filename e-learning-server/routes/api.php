@@ -12,6 +12,7 @@ Route::group(["prefix"=>"authentication"],function(){
 });
 
 Route::get("/user/{id}",[UserController::class,"getUser"]);
+Route::get("/course/{id}",[UserController::class,"getCourse"]);
 
 
 Route::group(['middleware' => 'api'], function($router) {
