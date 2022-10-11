@@ -18,11 +18,7 @@ class User extends Authenticatable
         return $this->getKey();
     }
 
-    /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
-     */
+    
     public function getJWTCustomClaims()
     {
         return [];
@@ -39,6 +35,10 @@ class User extends Authenticatable
 
     public function enrolled(){
         return $this->belongsToMany(Enrolled::class,"student_id");
+    } 
+
+    public function submitted(){
+        return $this->belongsToMany(Submitted::class,"student_id");
     } 
 
     protected $fillable = [
