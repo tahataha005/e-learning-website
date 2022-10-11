@@ -18,6 +18,8 @@ Route::get("/course/{id}",[UserController::class,"getCourse"]);
 
 Route::group(["prefix"=>"admin"],function(){
     Route::get("/{records}",[AdminController::class,"getRecords"]);
+    Route::post("/addUser",[AdminController::class,"addUser"]);
+
 });
 
 Route::group(['middleware' => 'api'], function($router) {
