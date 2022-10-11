@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 tr,
 table {
     width: 100%;
@@ -17,10 +18,16 @@ td {
     font-size: 20px;
 }
 
-/* Utilities */
 
 .round-edges {
     border-radius: 20px;
+}
+
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 0 2vh;
 }
 
 .btn:hover {
@@ -29,6 +36,7 @@ td {
     border: 0;
     transition: transform 0.2s;
     transform: scale(1.05);
+
 }
 
 .flex {
@@ -104,6 +112,7 @@ td {
     width: 75%;
     height: 95%;
     margin: 2vh;
+
 }
 
 .title {
@@ -151,3 +160,4 @@ td {
     align-items: flex-start;
     justify-content: flex-start;
 }
+
