@@ -7,6 +7,9 @@
 }
 
 
+/* Utilities */
+
+
 tr,
 table {
     width: 100%;
@@ -18,11 +21,9 @@ td {
     font-size: 20px;
 }
 
-
 .round-edges {
     border-radius: 20px;
 }
-
 
 .btn {
     cursor: pointer;
@@ -109,10 +110,10 @@ td {
 }
 
 .page-content {
+
     width: 75%;
     height: 95%;
     margin: 2vh;
-
 }
 
 .title {
