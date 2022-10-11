@@ -37,22 +37,16 @@ class JWTController extends Controller
     }
 
  
-    public function login(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            // 'username' => 'required|username',
-            'password' => 'required|string|min:6',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+    public function login(Request $request){
+        
+        $user = User::where("username",$request->username)->get();
+        if($user->isEmpty()){
+            return reposnse()-json(["status"=>"not a valid username"]);
         }
-
-        if (!$token = auth()->attempt($validator->validated())) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if(Hash::make($user->password) == $request->password){
+            return reposnse()-json(["status"=>"success"]);
         }
-
-        return $this->respondWithToken($token);
+        return reposnse()-json(["status"=>"wrong password"]);
     }
 
 
