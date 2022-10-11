@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Announcement;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdminController extends Controller
@@ -24,8 +25,36 @@ class AdminController extends Controller
             $students = User::select("*")->where("user_type",1)->get();            
             return response()->json(["records"=>$students]);
         }
-        
-        return response()->json(["status"=>"Not valid request"]);
 
+        return response()->json(["status"=>"Not valid request"]);
+    }
+
+    function addUser(Request $request){
+
+        $fetch_username = User::where("username",$request->username)->get();
+
+        if($fetch_username->isEmpty()){
+
+            $field = $request->field;
+
+            if($field == "instructor"){
+
+                $user = User::create([
+                    "username"=>$request->username,
+                    "password"=> Hash::make($request->password),
+                    "user_type"=>2,
+                ]);
+    
+                return response()->json([
+                    "username"=>$request->username,
+                    "status"=>"instructor saved successful"
+                ]);
+            }
+        }
+
+        return response()->json([
+            "username"=>$request->username,
+            "status"=>"Username already exists"
+        ]);
     }
 }
