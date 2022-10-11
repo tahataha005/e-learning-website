@@ -115,4 +115,22 @@ class AdminController extends Controller
             "status"=>"not a valid field"
         ]);       
     }
+
+    //Delete field
+    function deleteField(Request $request){
+
+        //Check if deleting user
+        if($request->username){
+            User::where("username",$request->username)->delete();
+            
+            return response()->json([
+                "status"=>"user deleted successfully"
+            ]); 
+        }
+
+        return response()->json([
+            "status"=>"nothing deleted, check inputs"
+        ]); 
+    }
+
 }
