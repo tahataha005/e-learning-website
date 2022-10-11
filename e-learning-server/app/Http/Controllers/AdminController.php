@@ -131,6 +131,15 @@ class AdminController extends Controller
         return response()->json([
             "status"=>"nothing deleted, check inputs"
         ]); 
+
+        //Check if deleting course
+        if($request->course_name){
+            Course::where("name",$request->course_name)->delete();
+
+            return response()->json([
+                "status"=>"course deleted successfully"
+            ]); 
+        }
     }
 
 }
