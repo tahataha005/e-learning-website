@@ -11,7 +11,7 @@ Route::group(["prefix"=>"authentication"],function(){
     Route::post('/login', [JWTController::class, 'login']);
 });
 
-
+Route::get("/user/{id}",[UserController::class,"getUser"]);
 
 
 Route::group(['middleware' => 'api'], function($router) {
