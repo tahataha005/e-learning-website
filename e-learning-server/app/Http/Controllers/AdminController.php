@@ -10,6 +10,7 @@ use App\Models\Announcement;
 
 class AdminController extends Controller
 {
+    //Function that gets all info about the inputed request
     function getRecords($records){
         if($records == "courses"){
             $courses = Course::select("*")->get();            
@@ -23,6 +24,7 @@ class AdminController extends Controller
             $students = User::select("*")->where("user_type",1)->get();            
             return response()->json(["records"=>$students]);
         }
+        
         return response()->json(["status"=>"Not valid request"]);
 
     }
