@@ -14,9 +14,9 @@ const SideBar = ({
         <div className={side_bar_classes}>
             <div className="userstamp flex column">
                 <p className="title">{userstamp[0]}</p>
-                <p className="subtitle">{userstamp[1]}</p>
+                <p className="subtitle light-txt">{userstamp[1]}</p>
             </div>
-            <div className="side-body flex column">
+            <div className="side-body">
                 {buttons.map(btn => {
                     return (
                         <AdminButton

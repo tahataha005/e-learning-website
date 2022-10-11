@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\InstructorController;
 
 Route::group(["prefix"=>"authentication"],function(){
     Route::post('/register', [JWTController::class, 'register']);
@@ -20,6 +20,10 @@ Route::group(["prefix"=>"admin"],function(){
     Route::get("/{records}",[AdminController::class,"getRecords"]);
     Route::post("/add_field",[AdminController::class,"addField"]);
     Route::post("/delete_field",[AdminController::class,"deleteField"]);
+});
+
+Route::group(["prefix"=>"instructor"],function(){
+    Route::post("/add_announcement",[InstructorController::class,"addAnnouncement"]);
 });
 
 Route::group(['middleware' => 'api'], function($router) {
