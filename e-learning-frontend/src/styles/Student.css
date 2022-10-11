@@ -1,0 +1,65 @@
+.course-btn {
+    width: 90%;
+    height: 20%;
+    margin: 2vh;
+    font-size: 30px;
+}
+
+.student-content {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.announcements-container {
+    width: 100%;
+    height: 75%;
+    margin-top: 2vh;
+}
+
+.announcements-landing {
+    width: 30%;
+    height: 100%;
+    border-right: 1px rgb(99, 115, 155) solid;
+}
+
+.announcements-title {
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    padding: 2vh;
+    justify-content: center;
+    border-bottom: 1px rgb(99, 115, 155) solid;
+}
+
+.announcements-wrapper {
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.announcements-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.annoucement-block {
+    width: 100%;
+    height: 20%;
+    border-top: 1px rgb(99, 115, 155) solid;
+    padding: 2vh;
+}
+
+.annoucement-title {
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content-outerview {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
