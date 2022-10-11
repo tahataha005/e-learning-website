@@ -6,16 +6,29 @@
     box-sizing: border-box;
 }
 
+tr,
+table {
+    width: 100%;
+}
+
+td {
+    width: 30%;
+    height: 50px;
+    font-size: 20px;
+}
+
 /* Utilities */
 
 .round-edges {
     border-radius: 20px;
 }
 
-.btn {
+.btn:hover {
+    opacity: 80%;
     cursor: pointer;
     border: 0;
-    padding: 0 2vh;
+    transition: transform 0.2s;
+    transform: scale(1.05);
 }
 
 .flex {
@@ -88,7 +101,9 @@
 }
 
 .page-content {
-    width: 100%;
+    width: 75%;
+    height: 95%;
+    margin: 2vh;
 }
 
 .title {
