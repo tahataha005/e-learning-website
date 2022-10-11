@@ -22,6 +22,10 @@ Route::group(["prefix"=>"admin"],function(){
     Route::post("/delete_field",[AdminController::class,"deleteField"]);
 });
 
+Route::group(["prefix"=>"instructor"],function(){
+
+});
+
 Route::group(['middleware' => 'api'], function($router) {
 
 });
