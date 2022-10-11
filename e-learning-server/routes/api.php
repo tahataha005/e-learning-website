@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\InstructorController;
 
 Route::group(["prefix"=>"authentication"],function(){
     Route::post('/register', [JWTController::class, 'register']);
@@ -23,7 +23,7 @@ Route::group(["prefix"=>"admin"],function(){
 });
 
 Route::group(["prefix"=>"instructor"],function(){
-    
+    Route::post("/add_announcement",[InstructorController::class,"addAnnouncement"]);
 });
 
 Route::group(['middleware' => 'api'], function($router) {
