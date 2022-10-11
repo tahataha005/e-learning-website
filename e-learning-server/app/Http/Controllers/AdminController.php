@@ -29,7 +29,7 @@ class AdminController extends Controller
         return response()->json(["status"=>"Not valid request"]);
     }
 
-    function addUser(Request $request){
+    function addField(Request $request){
 
         $fetch_username = User::where("username",$request->username)->get();
 
@@ -61,6 +61,26 @@ class AdminController extends Controller
                 return response()->json([
                     "username"=>$request->username,
                     "status"=>"student saved successful"
+                ]);
+            }
+            if($field == "course"){
+
+                $get_instructor_id = User::select("id")->where("username",$request->instructor_username)->get();
+
+                if($get_instructor_id->isEmpty()){
+                    return response()->json(["status"=>"instructor not found"]);
+                }
+
+                $user = Course::create([
+                    "crn"=>$request->crn,
+                    "name"=> $request->name,
+                    "time"=>$request->time,
+                    "instructor_id"=>$get_instructor_id[0]->id
+                ]);
+    
+                return response()->json([
+                    "username"=>$request->username,
+                    "status"=>"course saved successful"
                 ]);
             }
         }
