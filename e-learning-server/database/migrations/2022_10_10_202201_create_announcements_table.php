@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->string("content");
-            $table->boolean("assignment")->default(0);
+            $table->boolean("assignment")->default(false);
             $table->foreignId('course_id')->constrained()->references('id')->on('courses');
             $table->timestamps();
         });
