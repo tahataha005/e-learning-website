@@ -50,6 +50,19 @@ class AdminController extends Controller
                     "status"=>"instructor saved successful"
                 ]);
             }
+            if($field == "student"){
+
+                $user = User::create([
+                    "username"=>$request->username,
+                    "password"=> Hash::make($request->password),
+                    "user_type"=>1,
+                ]);
+    
+                return response()->json([
+                    "username"=>$request->username,
+                    "status"=>"student saved successful"
+                ]);
+            }
         }
 
         return response()->json([
