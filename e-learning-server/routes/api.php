@@ -23,7 +23,7 @@ Route::group(["prefix"=>"admin"],function(){
 });
 
 Route::group(["prefix"=>"instructor"],function(){
-
+    
 });
 
 Route::group(['middleware' => 'api'], function($router) {
