@@ -13,6 +13,10 @@ class Announcement extends Model
         return $this->belongsTo(Course::class,"course_id");
     } 
 
+    public function submitted(){
+        return $this->belongsToMany(Submitted::class,"assignment_id");
+    } 
+
     protected $fillable = [
         'title',
         'content',
