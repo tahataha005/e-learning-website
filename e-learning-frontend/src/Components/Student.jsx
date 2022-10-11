@@ -3,8 +3,12 @@ import Announcement from "./Announcement";
 import "../styles/Student.css";
 import Header from "./Header";
 import SideBar from "./SideBar";
+import { getUser } from "../hooks/getUserInfo.js";
+import { useState, useEffect } from "react";
 
 const Student = () => {
+    const [userInfo, setUserInfo] = useState([]);
+
     const buttons = [
         { id: 1, name: "Electronics" },
         { id: 2, name: "Math" },
@@ -13,6 +17,15 @@ const Student = () => {
         { id: 5, name: "English" },
         { id: 6, name: "English" },
     ];
+
+    useEffect(() => {
+        const getUserInfo = async () => {
+            const user_info = await getUser();
+            setUserInfo(user_info);
+        };
+
+        getUserInfo();
+    }, []);
 
     const announcements = [
         {
@@ -29,7 +42,7 @@ const Student = () => {
         { id: 5, title: "Announcement 5", content: "Text Text Text" },
     ];
 
-    const userstamp = ["Username", "Student"];
+    const userstamp = [userInfo.username, "Student"];
 
     return (
         <div className="page-container flex white-bg">
